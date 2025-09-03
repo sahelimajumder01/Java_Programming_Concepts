@@ -1,0 +1,31 @@
+class StudentMarks {
+    int rollNo;
+    String name;
+    int marks[];
+
+    StudentMarks(int r, String n, int m[]) {
+        rollNo = r;
+        name = n;
+        marks = m;
+    }
+
+    void calculate() {
+        int total = 0;
+        for (int mark : marks) total += mark;
+        double avg = total / (double) marks.length;
+
+        System.out.println("Roll: " + rollNo + ", Name: " + name);
+        System.out.println("Total: " + total + ", Average: " + avg);
+
+        if (avg >= 90) System.out.println("Grade: A");
+        else if (avg >= 75) System.out.println("Grade: B");
+        else if (avg >= 50) System.out.println("Grade: C");
+        else System.out.println("Grade: Fail");
+    }
+
+    public static void main(String[] args) {
+        int marks[] = {85, 90, 78, 88, 92};
+        StudentMarks s = new StudentMarks(101, "Sneha", marks);
+        s.calculate();
+    }
+}
