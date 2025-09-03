@@ -1,0 +1,34 @@
+class Employee {
+    private String name;
+    private double salary;
+
+    public Employee(String n, double s) {
+        name = n;
+        salary = s;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double s) {
+        if (s > 0) salary = s;
+        else System.out.println("Invalid salary!");
+    }
+
+    public void raiseSalary(double percent) {
+        salary += salary * percent / 100;
+    }
+
+    public static void main(String[] args) {
+        Employee e = new Employee("Ankit", 30000);
+        System.out.println("Name: " + e.getName() + ", Salary: " + e.getSalary());
+
+        e.raiseSalary(10);
+        System.out.println("After Raise, Salary: " + e.getSalary());
+    }
+}
