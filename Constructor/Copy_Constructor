@@ -1,0 +1,28 @@
+class Car {
+    String brand;
+    double price;
+
+    // Normal constructor
+    Car(String b, double p) {
+        brand = b;
+        price = p;
+    }
+
+    // Copy constructor
+    Car(Car c) {
+        brand = c.brand;
+        price = c.price;
+    }
+
+    void display() {
+        System.out.println("Brand: " + brand + ", Price: " + price);
+    }
+
+    public static void main(String[] args) {
+        Car c1 = new Car("Honda", 1200000);
+        Car c2 = new Car(c1); // copy
+
+        c1.display();
+        c2.display();
+    }
+}
