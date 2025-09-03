@@ -1,0 +1,41 @@
+class Book {
+    private String title;
+    private String author;
+    private boolean available;
+
+    public Book(String t, String a) {
+        title = t;
+        author = a;
+        available = true;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public boolean isAvailable() {
+        return available;
+    }
+
+    public void borrowBook() {
+        if (available) {
+            available = false;
+            System.out.println(title + " has been borrowed.");
+        } else {
+            System.out.println(title + " is not available.");
+        }
+    }
+
+    public void returnBook() {
+        available = true;
+        System.out.println(title + " has been returned.");
+    }
+
+    public static void main(String[] args) {
+        Book b = new Book("Java Programming", "Herbert Schildt");
+        System.out.println("Available: " + b.isAvailable());
+        b.borrowBook();
+        System.out.println("Available: " + b.isAvailable());
+        b.returnBook();
+    }
+}
