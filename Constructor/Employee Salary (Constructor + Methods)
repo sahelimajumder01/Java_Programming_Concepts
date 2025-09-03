@@ -1,0 +1,26 @@
+class Employee {
+    int id;
+    String name;
+    double basicSalary;
+
+    Employee(int i, String n, double b) {
+        id = i;
+        name = n;
+        basicSalary = b;
+    }
+
+    void calculateSalary() {
+        double hra = 0.10 * basicSalary;
+        double da = 0.20 * basicSalary;
+        double gross = basicSalary + hra + da;
+
+        System.out.println("ID: " + id + ", Name: " + name);
+        System.out.println("Basic: " + basicSalary + ", HRA: " + hra + ", DA: " + da);
+        System.out.println("Gross Salary: " + gross);
+    }
+
+    public static void main(String[] args) {
+        Employee e = new Employee(1, "Riya", 20000);
+        e.calculateSalary();
+    }
+}
