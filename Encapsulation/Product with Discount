@@ -1,0 +1,29 @@
+class Product {
+    private String name;
+    private double price;
+
+    public Product(String n, double p) {
+        name = n;
+        price = p;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void applyDiscount(double percent) {
+        price -= price * percent / 100;
+    }
+
+    public static void main(String[] args) {
+        Product p = new Product("Laptop", 60000);
+        System.out.println("Product: " + p.getName() + ", Price: " + p.getPrice());
+
+        p.applyDiscount(15);
+        System.out.println("After discount, Price: " + p.getPrice());
+    }
+}
